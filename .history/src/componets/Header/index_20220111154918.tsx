@@ -29,6 +29,7 @@ export default function Header() {
           value={title}
           onInput={(e) => setTitle(e.detail.value)}
           onBlur={e => addT(e)}
+          focus
         />
         <View>{title}</View>
         <Button onClick={toIndex}>导航去index主页面</Button>

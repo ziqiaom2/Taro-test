@@ -8,7 +8,7 @@ import store from '../../store/counterMobx6';
 import Item from '../Item/index';
 
 export default function Header() {
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState('默认title')
 
   function toIndex() {
     Taro.navigateTo({ url: `/pages/index/index?title=${title}` })
@@ -29,6 +29,7 @@ export default function Header() {
           value={title}
           onInput={(e) => setTitle(e.detail.value)}
           onBlur={e => addT(e)}
+          focus
         />
         <View>{title}</View>
         <Button onClick={toIndex}>导航去index主页面</Button>
