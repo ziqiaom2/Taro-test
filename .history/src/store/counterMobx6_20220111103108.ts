@@ -42,6 +42,7 @@ class Store {
       todo.done = done;
     });
   }
+  //清除所有已经完成的todo
   @action clearAllTodo() {
     this.todos = this.todos.filter((todo) => {
       return !todo.done;

@@ -25,28 +25,10 @@ class Store {
     { id: "002", title: "React", done: false },
     { id: "003", title: "Angular", done: false },
   ];
-  @action addTodo(obj) {
-    this.todos.unshift(obj);
+  @action addTodo (obj){
+    this.todos.unshift(obj)
   }
-  @action checkTodo(id) {
-    this.todos.forEach((todo) => {
-      if (todo.id === id) todo.done = !todo.done;
-    });
-  }
-  @action deleteTodo(id) {
-    this.todos = this.todos.filter((todo) => todo.id !== id);
-    console.log("this.todos", this.todos);
-  }
-  @action checkAllTodo(done) {
-    this.todos.forEach((todo) => {
-      todo.done = done;
-    });
-  }
-  @action clearAllTodo() {
-    this.todos = this.todos.filter((todo) => {
-      return !todo.done;
-    });
-  }
+  @action checkTodo
 }
 
 export default new Store();

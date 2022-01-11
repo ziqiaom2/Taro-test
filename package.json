@@ -41,6 +41,7 @@
 		"@tarojs/taro": "3.3.19",
 		"mobx": "^4.8.0",
 		"mobx-react": "^6.1.4",
+		"nanoid": "^3.1.30",
 		"react": "^17.0.0",
 		"react-dom": "^17.0.0"
 	},
