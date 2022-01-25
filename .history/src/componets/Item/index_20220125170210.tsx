@@ -4,7 +4,7 @@ import { AtSwipeAction } from 'taro-ui'
 
 import './index.less';
 import store from '../../store/counterMobx6';
-
+import SwipeAction from '../SwipeAction';
 
 
 
