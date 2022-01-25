@@ -1,7 +1,7 @@
 import { useObserver } from 'mobx-react';
+import { AtIcon } from 'taro-ui'
 
-
-
+import "~taro-ui/dist/style/components/icon.scss";
 import React, { useState } from 'react'
 import { Button, View, Input, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro';
@@ -10,6 +10,7 @@ import store from '../../store/counterMobx6';
 
 
 
+import Item from '../Item/index';
 
 
 
@@ -24,7 +25,7 @@ export default function Header() {
   function addT(e) {
     const obj = { id: (100000 * (Math.random())).toFixed(), title: e, done: false }
     store.addTodo(obj)
-    console.log('store.todos:',store.todos);
+    console.log(store.todos);
     setTitle('')
   }
 
@@ -45,7 +46,15 @@ export default function Header() {
 
 
       <Button onClick={toIndex}>导航去index主页面</Button>
-      
+      {store.todos.map((todo) => {
+        return (
+          <Item
+            key={todo.id}
+            {...todo}
+          />
+
+        );
+      })}
     </View>
   )))
 

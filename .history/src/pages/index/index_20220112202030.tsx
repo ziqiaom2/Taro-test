@@ -6,7 +6,6 @@ import { observer, inject, useObserver } from "mobx-react";
 import Child from "../../componets/Child/index";
 import Blog from "../Blog";
 import store from '../../store/counterMobx6';
-
 import "./index.less";
 
 type PageStateProps = {

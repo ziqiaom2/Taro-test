@@ -6,7 +6,7 @@ import store from '../../store/counterMobx6';
 
 
 import Item from '../../componets/Item';
-//需要用store的时候一定要记得使用useObserver
+
 
 
 export default function TodoList() {

@@ -6,7 +6,7 @@ import store from "./store/counterMobx6";
 import Index from "./pages/index/index";
 
 
-import "./app.scss";
+import "./app.less";
 
 class App extends Component {
   componentDidMount() {

@@ -6,6 +6,8 @@ module.exports = {
       framework: 'react',
       ts: true
     }]
-  ]
-
+  ],
+  h5: {
+    esnextModules: ['taro-ui']
+  }
 }

@@ -24,7 +24,7 @@ export default function Header() {
   function addT(e) {
     const obj = { id: (100000 * (Math.random())).toFixed(), title: e, done: false }
     store.addTodo(obj)
-    console.log('store.todos:',store.todos);
+    console.log(store.todos);
     setTitle('')
   }
 

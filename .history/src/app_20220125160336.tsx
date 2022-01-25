@@ -1,12 +1,11 @@
-
-
+import 'taro-ui/dist/style/index.scss'
 import { Component, Fragment } from "react";
 import { Provider } from "mobx-react";
 import store from "./store/counterMobx6";
-import Index from "./pages/index/index";
+import Index from "./pages/index";
 
 
-import "./app.scss";
+import "./app.less";
 
 class App extends Component {
   componentDidMount() {
