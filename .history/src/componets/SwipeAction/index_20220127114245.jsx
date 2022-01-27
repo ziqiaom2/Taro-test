@@ -123,25 +123,9 @@ class Index extends Component {
   }
 
   updateT(id,title){
-    let that = this
     store.updateTodo(id,title)
     this.setState({ editing: false })
     console.log('updateT:',);
-    const _animation = Taro.createAnimation({
-      duration: 400,
-      timingFunction: 'linear',
-      // delay: 0,
-      transformOrigin: 'left top 0',
-      success: function (res) {
-        console.log(res)
-      },
-    })
-
-    _animation.translateX(0).step()
-    that.setState({
-      // 输出动画
-      animation: _animation.export(),
-    })
   }
 
   deleteT(id) {

@@ -20,7 +20,8 @@ class Index extends Component {
     // eslint-disable-next-line react/no-unused-state
     startY: 0,
     editing: false,
-    title: this.props.title
+    title:''
+
   }
 
   componentDidMount() {
@@ -123,25 +124,9 @@ class Index extends Component {
   }
 
   updateT(id,title){
-    let that = this
     store.updateTodo(id,title)
     this.setState({ editing: false })
     console.log('updateT:',);
-    const _animation = Taro.createAnimation({
-      duration: 400,
-      timingFunction: 'linear',
-      // delay: 0,
-      transformOrigin: 'left top 0',
-      success: function (res) {
-        console.log(res)
-      },
-    })
-
-    _animation.translateX(0).step()
-    that.setState({
-      // 输出动画
-      animation: _animation.export(),
-    })
   }
 
   deleteT(id) {
@@ -162,7 +147,7 @@ class Index extends Component {
         {/* 每一项 */}
         {this.state.editing ?
           <View className='historyItem'> 
-            <Input className='itemInput' placeholder={this.state.title} onInput={e => this.setState({title: e.detail.value})} focus></Input>
+            <Input className='itemInput' value={this.props.title} onInput={e => this.setState({title: e.detail.value})} focus></Input>
             <View className='itemEdit right' onClick={() => this.updateT(this.props.id,this.state.title)}>完成</View>
           </View>
           :
@@ -178,7 +163,7 @@ class Index extends Component {
               onTouchEnd={this.touchmove.bind(this)}
               animation={this.state.animation}
             >
-              <View className='title'>{this.state.title}</View>
+              <View className='title'>{this.props.title}</View>
 
             </View>
           </View>}

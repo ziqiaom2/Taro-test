@@ -1,26 +1,22 @@
-// eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react'
-import { Input, ScrollView, View } from '@tarojs/components'
-
-import { observer } from 'mobx-react'
-
 import Taro from '@tarojs/taro'
 import store from '../../store/counterMobx6'
+import { Input, ScrollView, View } from '@tarojs/components'
 
 import './index.less'
 
 
 
-@observer
-class Index extends Component {
+
+
+export default class Index extends Component {
   state = {
     animation: '',
-    // eslint-disable-next-line react/no-unused-state
     startX: 0, // 开始坐标
-    // eslint-disable-next-line react/no-unused-state
     startY: 0,
     editing: false,
-    title: this.props.title
+    title:''
+
   }
 
   componentDidMount() {
@@ -44,9 +40,7 @@ class Index extends Component {
   // 滑动开始
   touchstart(e) {
     this.setState({
-      // eslint-disable-next-line react/no-unused-state
       startX: e.changedTouches[0].clientX,
-      // eslint-disable-next-line react/no-unused-state
       startY: e.changedTouches[0].clientY,
     })
   }
@@ -122,27 +116,6 @@ class Index extends Component {
     return (360 * Math.atan(_Y / _X)) / (2 * Math.PI)
   }
 
-  updateT(id,title){
-    let that = this
-    store.updateTodo(id,title)
-    this.setState({ editing: false })
-    console.log('updateT:',);
-    const _animation = Taro.createAnimation({
-      duration: 400,
-      timingFunction: 'linear',
-      // delay: 0,
-      transformOrigin: 'left top 0',
-      success: function (res) {
-        console.log(res)
-      },
-    })
-
-    _animation.translateX(0).step()
-    that.setState({
-      // 输出动画
-      animation: _animation.export(),
-    })
-  }
 
   deleteT(id) {
     console.log('id:', id);
@@ -162,8 +135,8 @@ class Index extends Component {
         {/* 每一项 */}
         {this.state.editing ?
           <View className='historyItem'> 
-            <Input className='itemInput' placeholder={this.state.title} onInput={e => this.setState({title: e.detail.value})} focus></Input>
-            <View className='itemEdit right' onClick={() => this.updateT(this.props.id,this.state.title)}>完成</View>
+            <Input className='itemInput' value={this.props.title} onInput={e => this.setState({title: e.detail.value})} focus></Input>
+            <View className='itemEdit right' onClick={() => }>完成</View>
           </View>
           :
           <View className='historyItem'>
@@ -178,7 +151,7 @@ class Index extends Component {
               onTouchEnd={this.touchmove.bind(this)}
               animation={this.state.animation}
             >
-              <View className='title'>{this.state.title}</View>
+              <View className='title'>{this.props.title}</View>
 
             </View>
           </View>}
@@ -187,5 +160,3 @@ class Index extends Component {
     )
   }
 }
-
-export default Index
