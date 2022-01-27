@@ -104,7 +104,7 @@ class Index extends Component {
         },
       })
 
-      _animation.translateX(-200).step()
+      _animation.translateX(-80).step()
       that.setState({
         // 输出动画
         animation: _animation.export(),
@@ -129,7 +129,6 @@ class Index extends Component {
     store.updateTodo(id,title)
     this.setState({ editing: false })
     console.log('updateT:',);
-    //更新item之后自动右滑，显示title
     const _animation = Taro.createAnimation({
       duration: 400,
       timingFunction: 'linear',

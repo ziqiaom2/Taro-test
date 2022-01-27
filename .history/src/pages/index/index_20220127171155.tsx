@@ -61,18 +61,18 @@ export default function Index(props) {
   return useObserver(() => (
     <View className='index'>
       <View className='buttons' >
-        <AtButton className='atButton' type='primary' onClick={increment}>+</AtButton>
-        <AtButton className='atButton' type='primary' onClick={decrement}>-</AtButton>
-        <AtButton className='atButton' type='primary' onClick={incrementAsync}>Add Async</AtButton>
+        <AtButton type='primary' onClick={increment}>+</AtButton>
+        <AtButton type='primary' onClick={decrement}>-</AtButton>
+        <AtButton type='primary' onClick={incrementAsync}>Add Async</AtButton>
         <Text>{store.counter}</Text>
         <Child />
 
         <Text>从Blog路由传来的title:{title}</Text>
       </View>
       <View className='buttons' >
-        <AtButton className='atButton' type='secondary' onClick={toIndex}>导航去Blog页面</AtButton>
-        <AtButton className='atButton' type='secondary' onClick={toTodoList}>导航去TodoList页面</AtButton>
-        <AtButton className='atButton' type='secondary' onClick={toGreedySnake}>导航去GreedySnake页面</AtButton>
+        <AtButton type='primary' onClick={toIndex}>导航去Blog页面</AtButton>
+        <AtButton type='primary' onClick={toTodoList}>导航去TodoList页面</AtButton>
+        <AtButton type='primary' onClick={toGreedySnake}>导航去GreedySnake页面</AtButton>
       </View>
 
     </View>

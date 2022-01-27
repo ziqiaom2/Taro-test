@@ -6,8 +6,6 @@ import { Button, View, Input, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro';
 import store from '../../store/counterMobx6';
 
-import './index.less'
-
 
 
 

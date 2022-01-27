@@ -104,7 +104,7 @@ class Index extends Component {
         },
       })
 
-      _animation.translateX(-200).step()
+      _animation.translateX(-80).step()
       that.setState({
         // 输出动画
         animation: _animation.export(),

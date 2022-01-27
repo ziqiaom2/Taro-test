@@ -1,5 +1,5 @@
 
-
+import { AtButton } from 'taro-ui'
 // 除了引入所需的组件，还需要手动引入组件样式
 // app.js
 import 'taro-ui/dist/style/index.scss' 

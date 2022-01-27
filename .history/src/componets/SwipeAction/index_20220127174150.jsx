@@ -104,7 +104,7 @@ class Index extends Component {
         },
       })
 
-      _animation.translateX(-200).step()
+      _animation.translateX(-80).step()
       that.setState({
         // 输出动画
         animation: _animation.export(),
@@ -129,7 +129,6 @@ class Index extends Component {
     store.updateTodo(id,title)
     this.setState({ editing: false })
     console.log('updateT:',);
-    //更新item之后自动右滑，显示title
     const _animation = Taro.createAnimation({
       duration: 400,
       timingFunction: 'linear',
@@ -166,13 +165,13 @@ class Index extends Component {
         {this.state.editing ?
           <View className='historyItem'> 
             <Input className='itemInput' placeholder={this.state.title} onInput={e => this.setState({title: e.detail.value})} focus></Input>
-            <AtButton type='primary' size='small' className='itemEdit right' onClick={() => this.updateT(this.props.id,this.state.title)}>完成</AtButton>
+            <View className='itemEdit right' onClick={() => this.updateT(this.props.id,this.state.title)}>完成</View>
           </View>
           :
           <View className='historyItem'>
             {/* 删除 */}
-            <AtButton type='secondary' size='small' className='itemDelete right' onClick={() => this.deleteT(this.props.id)}>删除</AtButton>
-            <AtButton type='primary' size='small' className='itemEdit right' onClick={() => this.isEditing(this.props.id)}>编辑</AtButton>
+            <View className='itemDelete right' onClick={() => this.deleteT(this.props.id)}>删除</View>
+            <View className='itemEdit right' onClick={() => this.isEditing(this.props.id)}>编辑</View>
 
             {/* 遮盖层 */}
             <View
