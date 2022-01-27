@@ -15,16 +15,15 @@ import SwipeAction from '../../componets/SwipeAction';
 
 @observer
 class TodoList extends Component{
-  // state = {hasError:''}
-
+  state = {hasError:''}
   static getDerivedStateFromError(error) {
     console.log("error occurred:", error);
-    return  {hasError: error}
+    return { hasError: error };
   }
 
-  componentDidCatch() {
-    console.log("此处统计错误，反馈给服务器，用于通知编码人员进行bug的解决");
-  }
+  // componentDidCatch() {
+  //   console.log("此处统计错误，反馈给服务器，用于通知编码人员进行bug的解决");
+  // }
   render(){
     return (<View>
       <Header></Header>

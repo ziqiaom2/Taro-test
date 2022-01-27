@@ -15,11 +15,11 @@ import SwipeAction from '../../componets/SwipeAction';
 
 @observer
 class TodoList extends Component{
-  // state = {hasError:''}
+  state = {hasError:''}
 
   static getDerivedStateFromError(error) {
     console.log("error occurred:", error);
-    return  {hasError: error}
+    return  this.setState({hasError: error})
   }
 
   componentDidCatch() {
